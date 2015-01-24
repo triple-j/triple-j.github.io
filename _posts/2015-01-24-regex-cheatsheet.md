@@ -1,5 +1,9 @@
 ---
-published: false
+layout: post
+title: Regex Cheatsheet
+tags:
+- programming
+- reference
 ---
 
-![test](/images/regular_expressions_cheat_sheet.png)
+![Regular Expressions Cheatsheet](/images/regular_expressions_cheat_sheet.png)
