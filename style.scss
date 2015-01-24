@@ -177,7 +177,18 @@ img {
 
   img {
     border-radius: 5px;
-    background-color: #343432;
+    background-color: #80807B;
+    border: {
+      style: solid;
+      color: #343432;
+      width: 2px;
+    }
+    padding: {
+    	top: 0;
+    	right: 2px;
+    	bottom: 2px;
+    	left: 0;
+    }
   }
 }
 
