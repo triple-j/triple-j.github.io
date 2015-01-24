@@ -14,7 +14,7 @@ I dappled a bit with **HTML** before learning **Java**.  And **HTML** was partly
 
 I took a summer class one year that taught us how to model a 3D character and import into the game [Unreal Tournament 2003](http://en.wikipedia.org/wiki/Unreal_Tournament_2003), which got me interested in 3D modeling.  When it came to picking out colleges I wasn't sure what I wanted to do for a living, so I went with [MSB](http://www.msbcollege.edu/) since they had a Game Development program that had a little bit of everything in it.  I took classes for programming(VB.NET,C,C++,Java,Flash), drawing, 3D modeling and animation, Database, and even Sound.  Two years later and I had an A.A.S. in Programming and Game Development.
 
-After college I decided I preferred working on web development.  So I found a few jobs in that feild, and that is where I am today.
+After college I decided I preferred working on web development.  So I found a few jobs in that field, and that is where I am today.
 
 
 ### My Exploration with Linux
