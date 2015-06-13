@@ -10,9 +10,9 @@ _**Note:** This article assumes your new harddrive is mounted to `/media/temp/`
 and that it is attached to `/dev/sda`.  Make sure you change the commands below 
 to reflect your system before running them._
 
-First mount your new drive.  Mount partitions as they will be on your finished system.
+First mount your new drive.  Mount your partitions as they will be on your finished system to `/media/temp/`.
 
-Use [rsync][1] to copy the file to your new harddrive
+Then use [rsync][1] to copy the file to your new harddrive
 
 	rsync -aAXv --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /* /media/temp/
 	
