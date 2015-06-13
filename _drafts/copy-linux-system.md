@@ -6,6 +6,10 @@ tags:
 - how_to
 ---
 
+_**Note:** This article assumes your new harddrive is mounted to `/media/temp/`
+and that it is attached to `/dev/sda`.  Make sure you change the commands below 
+to reflect your system before running them._
+
 First mount your new drive.  Mount partitions as they will be on your finished system.
 
 Use [rsync][1] to copy the file to your new harddrive
@@ -33,4 +37,4 @@ Update your `/etc/fstab` file.  You can use `blkid /dev/sda1` to get the partiti
 
 [1]: https://wiki.archlinux.org/index.php/full_system_backup_with_rsync "Full system backup with rsync"
 [2]: https://wiki.debian.org/chroot "debian chroot"
-[3]: https://wiki.archlinux.org/index.php/GRUB#Install_to_disk
+[3]: https://wiki.archlinux.org/index.php/GRUB#Install_to_disk "GRUB -- Install to disk"
