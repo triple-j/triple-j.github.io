@@ -138,6 +138,43 @@ mkdir vfs/home/guest
 cp -r src/templates/vfs/home/.desktop vfs/home/guest/
 ```
 
+## Force SSL When Serving OS.js
+
+```
+server {
+    listen 80;
+    listen [::]:80;
+
+    server_name example.com;
+
+    # Force SSL Connection
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name example.com;
+    
+    ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+    
+    location /.well-known {
+        root /var/www/letsencrypt;
+    }
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
 #### Sources
 
 1. <https://certbot.eff.org/#debiantesting-nginx>
@@ -147,3 +184,8 @@ cp -r src/templates/vfs/home/.desktop vfs/home/guest/
 5. <http://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html>
 5. <https://os.js.org/manual/installation/nix/>
 6. <https://os.js.org/manual/auth/permission/>
+7. <http://serverfault.com/a/424016>
+8. <https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/#taxing-rewrites>
+9. <http://nginx.org/en/docs/http/converting_rewrite_rules.html>
+10. <https://os.js.org/manual/server/node/>
+11. <https://raymii.org/s/tutorials/NGINX_proxy_folder_to_different_root.html>
