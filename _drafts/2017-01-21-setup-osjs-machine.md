@@ -129,13 +129,11 @@ node osjs build
 
 # Now add yourself as an admin
 node bin/add-user.js add username admin
-mkdir vfs/home/username
-cp -r src/templates/vfs/home/.desktop vfs/home/username/
+mkdir -p vfs/home/username/.desktop
 
 # optional add guest
 node bin/add-user.js add guest guest
-mkdir vfs/home/guest
-cp -r src/templates/vfs/home/.desktop vfs/home/guest/
+mkdir vfs/home/guest/.desktop
 ```
 
 ## Force SSL When Serving OS.js
