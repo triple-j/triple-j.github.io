@@ -72,6 +72,11 @@ name            = DarkIce trial
 public          = no
 ```
 
+To make `darkice` run at startup change the `RUN` variable in `/etc/default/darkice`
+```
+RUN=yes
+```
+
 #### Sources
 
 1. <http://www.winko-erades.nl/index.php?option=com_content&view=article&id=54:installing-squeezelite-player-on-a-raspberry-pi-running-jessie&catid=20:raspbian>
