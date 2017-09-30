@@ -38,7 +38,7 @@ card 0: Intel [HDA Intel], device 3: HDMI 0 [HDMI 0]
 We want to use `[ALC662 rev1 Analog]` which is `card 0` and `device 0`, so we'll use `hw:0,0` in the config to select that
 device.
 
-Example `darkice.cfg` file:
+Modify the following and save to `/etc/darkice.cfg`:
 ```
 # see the darkice.cfg man page for details
 
@@ -51,12 +51,6 @@ device          = hw:0,0
 sampleRate      = 44100
 bitsPerSample   = 16
 channel         = 2
-
-[file-0]
-format          = vorbis
-bitrateMode     = abr
-bitrate         = 96
-fileName        = /tmp/save.ogg
 
 [icecast2-0]
 format          = vorbis
