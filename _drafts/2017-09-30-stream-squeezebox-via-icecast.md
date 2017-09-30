@@ -15,6 +15,14 @@ tags:
 sudo apt-get install squeezelite libflac-dev libasound2-plugins alsa-utils opus-tools speex
 ```
 
+## Install/Setup `icecast2`
+
+```
+sudo apt-get install icecast2
+```
+
+The package manager will ask you to configure Icecast2. You should do so and set a hostname and passwords for source, relay and administration. Needless to say to use strong passwords. The source password will be needed in the darkice.cfg configuration. (See SOURCE_PASSWORD in the example below) 
+
 ## Install/Setup `darkice`
 
 ```
@@ -58,16 +66,10 @@ bitrateMode     = abr
 bitrate         = 96
 server          = icecast2-0.example.com
 port            = 8000
-password        = hackme  
+password        = SOURCE_PASSWORD  
 mountPoint      = darkicetrial
 name            = DarkIce trial
 public          = no
-```
-
-## Install/Setup `icecast2`
-
-```
-sudo apt-get install icecast2
 ```
 
 #### Sources
