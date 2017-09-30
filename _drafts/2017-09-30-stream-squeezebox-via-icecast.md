@@ -9,6 +9,12 @@ tags:
 - squeezelite
 ---
 
+## Install `pulseaudio`
+
+```
+sudo apt-get install pulseaudio
+```
+
 ## Install `squeezelite`
 
 ```
