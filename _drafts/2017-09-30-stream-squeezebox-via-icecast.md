@@ -15,10 +15,16 @@ tags:
 sudo apt-get install pulseaudio
 ```
 
-## Install `squeezelite`
+## Install/Setup `squeezelite`
 
 ```
 sudo apt-get install squeezelite libflac-dev libasound2-plugins alsa-utils opus-tools speex
+```
+
+Set `/etc/default/squeezelite`
+```
+SL_SOUNDCARD="default"
+SB_EXTRA_ARGS="-a 180"
 ```
 
 ## Install/Setup `icecast2`
@@ -35,22 +41,16 @@ The package manager will ask you to configure Icecast2. You should do so and set
 sudo apt-get install darkice
 ```
 
-Find the ALSA device source: 
+Find the PulseAudio monitor (audio may need to be played first): 
 ```
-aplay -l
+pactl list | grep "Monitor Source"
 ```
 Outputs:
 ```
-**** List of PLAYBACK Hardware Devices ****
-card 0: Intel [HDA Intel], device 0: ALC662 rev1 Analog [ALC662 rev1 Analog]
-  Subdevices: 0/1
-  Subdevice #0: subdevice #0
-card 0: Intel [HDA Intel], device 3: HDMI 0 [HDMI 0]
-  Subdevices: 1/1
-  Subdevice #0: subdevice #0
+        Monitor Source: alsa_output.platform-snd_aloop.0.analog-stereo.monitor
+        Monitor Source: alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
 ```
-We want to use `[ALC662 rev1 Analog]` which is `card 0` and `device 0`, so we'll use `hw:0,0` in the config to select that
-device.
+We want to use `alsa_output.pci-0000_00_1b.0.analog-stereo.monitor`.
 
 Modify the following and save to `/etc/darkice.cfg`:
 ```
@@ -61,7 +61,8 @@ duration        = 0
 bufferSecs      = 5
 
 [input]
-device          = hw:0,0
+device          = pulseaudio
+paSourceName    = alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
 sampleRate      = 44100
 bitsPerSample   = 16
 channel         = 2
@@ -88,3 +89,4 @@ RUN=yes
 1. <http://www.winko-erades.nl/index.php?option=com_content&view=article&id=54:installing-squeezelite-player-on-a-raspberry-pi-running-jessie&catid=20:raspbian>
 2. <https://stmllr.net/blog/live-mp3-streaming-from-audio-in-with-darkice-and-icecast2-on-raspberry-pi/>
 3. <http://wiki.radioreference.com/index.php/Live_Audio/Ubuntu_Darkice#Darkice_Configuration_File>
+4. <https://wiki.debian.org/PulseAudio#Installing_PulseAudio>
