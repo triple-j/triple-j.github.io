@@ -90,3 +90,4 @@ RUN=yes
 2. <https://stmllr.net/blog/live-mp3-streaming-from-audio-in-with-darkice-and-icecast2-on-raspberry-pi/>
 3. <http://wiki.radioreference.com/index.php/Live_Audio/Ubuntu_Darkice#Darkice_Configuration_File>
 4. <https://wiki.debian.org/PulseAudio#Installing_PulseAudio>
+5. <https://wiki.archlinux.org/index.php/PulseAudio#daemon.conf>
