@@ -91,3 +91,5 @@ RUN=yes
 3. <http://wiki.radioreference.com/index.php/Live_Audio/Ubuntu_Darkice#Darkice_Configuration_File>
 4. <https://wiki.debian.org/PulseAudio#Installing_PulseAudio>
 5. <https://wiki.archlinux.org/index.php/PulseAudio#daemon.conf>
+6. <https://community.linuxmint.com/tutorial/view/1137>
+7. <http://possiblelossofprecision.net/?p=1956>
